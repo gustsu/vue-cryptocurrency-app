@@ -4,11 +4,6 @@
 		<router-link :to="{ name: 'news' }">News</router-link>
 	</div>
 </template>
-
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 #nav {
 	display: flex;
