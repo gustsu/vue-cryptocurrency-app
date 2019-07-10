@@ -1,10 +1,7 @@
 <template>
 	<div id="app">
-		<div id="nav">
-			<router-link :to="{ name: 'ranks' }">Rankings</router-link>
-			<router-link :to="{ name: 'news' }">News</router-link>
-		</div>
-		<router-view />
+		<NavBar />
+		<router-view></router-view>
 	</div>
 </template>
 
@@ -14,3 +11,12 @@ body {
 	background: #f0f0f0;
 }
 </style>
+
+<script>
+import NavBar from '@/components/NavBar.vue';
+export default {
+	components: {
+		NavBar
+	}
+};
+</script>
