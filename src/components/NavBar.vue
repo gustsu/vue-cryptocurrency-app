@@ -84,7 +84,7 @@
 	transition: background 0.25s;
 	cursor: pointer;
 	&:hover {
-		background: #dedede;
+		//background: #dedede;
 	}
 }
 </style>
