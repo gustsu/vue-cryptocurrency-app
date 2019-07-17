@@ -34,6 +34,10 @@
 							<md-icon>settings</md-icon>
 							<span class="md-list-item-text">Settings</span>
 						</md-menu-item>
+
+						<md-menu-item>
+							<md-switch v-model="boolean">Dark Mode</md-switch>
+						</md-menu-item>
 					</md-menu-content>
 				</md-menu>
 			</div>
@@ -88,3 +92,11 @@
 	}
 }
 </style>
+
+<script>
+export default {
+	data: () => ({
+		boolean: false
+	})
+};
+</script>

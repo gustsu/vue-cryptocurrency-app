@@ -17,19 +17,9 @@ export default {
 <style lang="scss">
 //setup theme
 @import '~vue-material/dist/theme/engine';
-//material purple
-// @include md-register-theme(
-// 	'default',
-// 	(
-// 		primary: md-get-palette-color(deeppurple, 500),
-// 		accent: md-get-palette-color(lightgreen, A400)
-// 	)
-// );
-//custom colors
 @include md-register-theme(
 	'default',
 	(
-		//primary: #121b74,
 		primary: md-get-palette-color(deeppurple, 500),
 		accent: #e42c64,
 		theme: light // This can be dark or light
@@ -37,11 +27,6 @@ export default {
 );
 @import '~vue-material/dist/theme/all';
 
-//app wide styles
-// html,
-// body {
-// 	background: #dedede;
-// }
 .container {
 	max-width: 1280px;
 	width: 100%;
