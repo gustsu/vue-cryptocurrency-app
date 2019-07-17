@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="app" v-bind:class="{ darkmodeclassname: isDarkMode }">
 		<NavBar />
 		<router-view></router-view>
 	</div>
@@ -10,7 +10,10 @@ import NavBar from '@/components/NavBar.vue';
 export default {
 	components: {
 		NavBar
-	}
+	},
+	data: () => ({
+		isDarkMode: true
+	})
 };
 </script>
 

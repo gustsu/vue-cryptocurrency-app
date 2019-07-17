@@ -1,11 +1,13 @@
 <template>
 	<div id="nav">
 		<md-toolbar class="md-primary" md-elevation="5" id="nav">
-			<h3 class="md-title" id="logo">
-				<span>Coin</span>
-				<span class="bold">Price</span>
-				<i class="material-icons">bar_chart</i>
-			</h3>
+			<router-link :to="{ name: 'ranks' }" id="logo-link">
+				<h3 class="md-title" id="logo">
+					<span>Coin</span>
+					<span class="bold">Price</span>
+					<i class="material-icons">bar_chart</i>
+				</h3>
+			</router-link>
 
 			<router-link :to="{ name: 'ranks' }">
 				<md-button>Rankings</md-button>
@@ -54,8 +56,10 @@
 	top: 0px;
 	z-index: 5;
 }
+#logo-link {
+	flex: 1 1 auto;
+}
 #logo {
-	flex: 1;
 	font-weight: 300;
 
 	i {
@@ -87,9 +91,6 @@
 .md-list-item {
 	transition: background 0.25s;
 	cursor: pointer;
-	&:hover {
-		//background: #dedede;
-	}
 }
 </style>
 
