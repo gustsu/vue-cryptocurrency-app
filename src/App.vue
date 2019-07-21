@@ -25,7 +25,7 @@ export default {
 	(
 		primary: md-get-palette-color(deeppurple, 500),
 		accent: #e42c64,
-		theme: light // This can be dark or light
+		theme: dark // This can be dark or light
 	)
 );
 @import '~vue-material/dist/theme/all';
@@ -34,6 +34,6 @@ export default {
 	max-width: 1280px;
 	width: 100%;
 	margin: 0px auto;
-	padding: 90px 12px 0px;
+	padding: 100px 12px 0px;
 }
 </style>

@@ -5,7 +5,7 @@
 				<h3 class="md-title" id="logo">
 					<span>Coin</span>
 					<span class="bold">Price</span>
-					<i class="material-icons">bar_chart</i>
+					<md-icon>bar_chart</md-icon>
 				</h3>
 			</router-link>
 
@@ -56,6 +56,9 @@
 	top: 0px;
 	z-index: 5;
 }
+#nav .md-toolbar {
+	height: 60px;
+}
 #logo-link {
 	flex: 1 1 auto;
 }
@@ -64,7 +67,6 @@
 
 	i {
 		position: relative;
-		top: 5px;
 		left: 4px;
 	}
 
@@ -90,7 +92,12 @@
 }
 .md-list-item {
 	transition: background 0.25s;
-	cursor: pointer;
+	cursor: pointerl;
+
+	&:hover {
+		// background: rgba(255, 255, 255, 0.2);
+		cursor: pointer;
+	}
 }
 </style>
 
