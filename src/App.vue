@@ -1,5 +1,5 @@
 <template>
-	<div id="app" v-bind:class="{ darkmodeclassname: isDarkMode }">
+	<div id="app">
 		<NavBar />
 		<router-view></router-view>
 	</div>
@@ -10,10 +10,7 @@ import NavBar from '@/components/NavBar.vue';
 export default {
 	components: {
 		NavBar
-	},
-	data: () => ({
-		isDarkMode: true
-	})
+	}
 };
 </script>
 
@@ -25,7 +22,7 @@ export default {
 	(
 		primary: md-get-palette-color(deeppurple, 500),
 		accent: #e42c64,
-		theme: dark // This can be dark or light
+		theme: light // This can be dark or light
 	)
 );
 @import '~vue-material/dist/theme/all';

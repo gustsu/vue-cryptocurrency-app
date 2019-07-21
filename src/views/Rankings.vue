@@ -23,6 +23,7 @@
 						<md-table-cell>{{ coin.DISPLAY.USD.MKTCAP }}</md-table-cell>
 					</md-table-row>
 				</md-table>
+				<md-progress-bar v-if="isLoading" class="md-primary" md-mode="indeterminate"></md-progress-bar>
 			</div>
 		</div>
 	</div>
@@ -32,13 +33,15 @@ import CoinApiService from '@/services/CoinApiService.js';
 export default {
 	data() {
 		return {
-			coins: []
+			coins: [],
+			isLoading: true
 		};
 	},
 	created() {
 		CoinApiService.getTopCoins()
 			.then(response => {
 				this.coins = response.data.Data;
+				this.isLoading = false;
 			})
 			.catch(error => {
 				console.log('errr: ' + error.response);
