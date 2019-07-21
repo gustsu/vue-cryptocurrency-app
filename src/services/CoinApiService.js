@@ -18,6 +18,6 @@ export default {
 		return apiClient.get('/data/top/mktcapfull?limit=20&tsym=USD');
 	},
 	getNews() {
-		return apiClient.get('/data/v2/news/?feeds=cryptocompare,cointelegraph,coindesk');
+		return apiClient.get('/data/v2/news/');
 	}
 };

@@ -4,7 +4,7 @@
 			<div class="md-layout-item md-medium-size-100">
 				<md-table md-card>
 					<md-table-toolbar>
-						<h1 class="md-title">Cryptocurrencies</h1>
+						<h1 class="md-title">Top Cryptocurrencies By Market Cap</h1>
 					</md-table-toolbar>
 
 					<md-table-row>

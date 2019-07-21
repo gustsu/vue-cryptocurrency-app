@@ -22,7 +22,7 @@ export default {
 	(
 		primary: md-get-palette-color(deeppurple, 500),
 		accent: #e42c64,
-		theme: light // This can be dark or light
+		theme: dark // This can be dark or light
 	)
 );
 @import '~vue-material/dist/theme/all';
