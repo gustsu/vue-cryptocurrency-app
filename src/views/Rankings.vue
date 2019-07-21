@@ -12,23 +12,37 @@
 						<md-table-head>Symbol</md-table-head>
 						<md-table-head>Name</md-table-head>
 						<md-table-head>Price</md-table-head>
+						<md-table-head>Market Cap</md-table-head>
 					</md-table-row>
 
-					<md-table-row>
-						<md-table-cell>1</md-table-cell>
-						<md-table-cell>BTC</md-table-cell>
-						<md-table-cell>Bitcoin</md-table-cell>
-						<md-table-cell>$20,000</md-table-cell>
-					</md-table-row>
-
-					<md-table-row>
-						<md-table-cell>2</md-table-cell>
-						<md-table-cell>ETC</md-table-cell>
-						<md-table-cell>Ethereum</md-table-cell>
-						<md-table-cell>$300</md-table-cell>
+					<md-table-row v-for="(coin, index) in coins" :key="index">
+						<md-table-cell>{{ index + 1 }}</md-table-cell>
+						<md-table-cell>{{ coin.CoinInfo.Name }}</md-table-cell>
+						<md-table-cell>{{ coin.CoinInfo.FullName }}</md-table-cell>
+						<md-table-cell>{{ coin.DISPLAY.USD.PRICE }}</md-table-cell>
+						<md-table-cell>{{ coin.DISPLAY.USD.MKTCAP }}</md-table-cell>
 					</md-table-row>
 				</md-table>
 			</div>
 		</div>
 	</div>
 </template>
+<script>
+import CoinApiService from '@/services/CoinApiService.js';
+export default {
+	data() {
+		return {
+			coins: []
+		};
+	},
+	created() {
+		CoinApiService.getTopCoins()
+			.then(response => {
+				this.coins = response.data.Data;
+			})
+			.catch(error => {
+				console.log('errr: ' + error.response);
+			});
+	}
+};
+</script>
