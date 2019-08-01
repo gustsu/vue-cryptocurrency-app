@@ -15,7 +15,7 @@
 
 							<md-card-header>
 								<div class="md-title">{{ story.title }}</div>
-								<div class="md-subhead">By: {{ story.source_info.name }}</div>
+								<div class="md-subhead">{{ story.source_info.name }}</div>
 							</md-card-header>
 
 							<md-card-content>{{ story.body.substring(0, 200) }}...</md-card-content>
