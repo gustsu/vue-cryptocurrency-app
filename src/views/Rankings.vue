@@ -38,7 +38,7 @@ export default {
 		};
 	},
 	created() {
-		CoinApiService.getTopCoins()
+		CoinApiService.getTopCoinsByLimit(20)
 			.then(response => {
 				this.coins = response.data.Data;
 				this.isLoading = false;

@@ -14,6 +14,9 @@ export default {
 	getCoinPriceBySymbol(symbol) {
 		return apiClient.get('/data/price?fsym=' + symbol + '&tsyms=USD');
 	},
+	getTopCoinsByLimit(limit) {
+		return apiClient.get('/data/top/mktcapfull?limit=' + limit + '&tsym=USD');
+	},
 	getTopCoins() {
 		return apiClient.get('/data/top/mktcapfull?limit=20&tsym=USD');
 	},
