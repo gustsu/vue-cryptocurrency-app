@@ -42,6 +42,7 @@ export default {
 			.then(response => {
 				this.coins = response.data.Data;
 				this.isLoading = false;
+				console.log(this.coins);
 			})
 			.catch(error => {
 				console.log('errr: ' + error.response);
