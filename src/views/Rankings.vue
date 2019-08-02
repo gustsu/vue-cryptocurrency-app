@@ -28,7 +28,7 @@
 			<div class="md-layout-item md-xlarge-size-33 md-large-size-33 md-medium-size-33 md-small-size-100">
 				<md-field>
 					<label for="movie">Coin Limit</label>
-					<md-select v-model="coinLimit" name="coinLimit" id="coinLimit" @md-selected="GetCoins(coinLimit)">
+					<md-select v-model="coinLimit" name="coinLimit" id="coinLimit" @md-selected="getRanks(coinLimit)">
 						<md-option value="20">20</md-option>
 						<md-option value="50">50</md-option>
 						<md-option value="100">100</md-option>
@@ -44,15 +44,15 @@ export default {
 	data() {
 		return {
 			coins: [],
-			isLoading: true,
-			coinLimit: 20
+			coinLimit: 20,
+			isLoading: true
 		};
 	},
 	created() {
-		this.GetCoins(this.coinLimit);
+		this.getRanks(this.coinLimit);
 	},
 	methods: {
-		GetCoins(limit) {
+		getRanks(limit) {
 			this.isLoading = true;
 			CoinApiService.getTopCoinsByLimit(limit)
 				.then(response => {
