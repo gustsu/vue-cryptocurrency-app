@@ -1,7 +1,7 @@
 <template>
 	<div class="rankings container">
 		<div class="md-layout md-gutter">
-			<div class="md-layout-item md-medium-size-100">
+			<div class="md-layout-item md-xlarge-size-100 md-large-size-100 md-medium-size-100">
 				<md-table md-card>
 					<md-table-toolbar>
 						<h1 class="md-title">Top Cryptocurrencies By Market Cap</h1>
@@ -25,6 +25,16 @@
 				</md-table>
 				<md-progress-bar v-if="isLoading" class="md-primary" md-mode="indeterminate"></md-progress-bar>
 			</div>
+			<div class="md-layout-item md-xlarge-size-33 md-large-size-33 md-medium-size-33 md-small-size-100">
+				<md-field>
+					<label for="movie">Coin Limit</label>
+					<md-select v-model="coinLimit" name="coinLimit" id="coinLimit" @md-selected="GetCoins(coinLimit)">
+						<md-option value="20">20</md-option>
+						<md-option value="50">50</md-option>
+						<md-option value="100">100</md-option>
+					</md-select>
+				</md-field>
+			</div>
 		</div>
 	</div>
 </template>
@@ -34,19 +44,28 @@ export default {
 	data() {
 		return {
 			coins: [],
-			isLoading: true
+			isLoading: true,
+			coinLimit: 20
 		};
 	},
 	created() {
-		CoinApiService.getTopCoinsByLimit(20)
-			.then(response => {
-				this.coins = response.data.Data;
-				this.isLoading = false;
-				console.log(this.coins);
-			})
-			.catch(error => {
-				console.log('errr: ' + error.response);
-			});
+		this.GetCoins(this.coinLimit);
+	},
+	methods: {
+		GetCoins(limit) {
+			this.isLoading = true;
+			CoinApiService.getTopCoinsByLimit(limit)
+				.then(response => {
+					this.coins = response.data.Data;
+					this.isLoading = false;
+				})
+				.catch(error => {
+					console.log('errr: ' + error.response);
+				});
+		},
+		testMethod() {
+			console.log('yup');
+		}
 	}
 };
 </script>
