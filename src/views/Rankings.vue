@@ -62,9 +62,6 @@ export default {
 				.catch(error => {
 					console.log('errr: ' + error.response);
 				});
-		},
-		testMethod() {
-			console.log('yup');
 		}
 	}
 };
